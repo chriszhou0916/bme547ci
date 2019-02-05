@@ -27,7 +27,9 @@ def test_exact(s, expected):
     ("tachycardd", True),
     ("tachybdic", False),
     ("tycardic", False),
-    ("tachyrdic", True)
+    ("tachyrdic", True),
+    ("t3chycard1c", True),
+    ("t333chycard1c", False)
 ])
 def test_fuzzy(s, expected):
     from tachycardia import is_tachycardic
