@@ -1,11 +1,15 @@
 import pytest
-@pytest.mark.parametrize('a,b,expected',[
-(2,3,5),
-(5,-2,3),
-(10,20,30)
+
+
+@pytest.mark.parametrize('s,expected', [
+    ("taChycArdic", True),
+    ("  tachycardic  ", True),
+    ("..,,tachycardic...,", True),
+    ("tachycard", False),
+    ("cidrCC", False),
+    ("..  ..  asssstachycardiC.. ", True)
 ])
-# this is a decorator. runs this test multiple times with different inputs
-def test_calculator(a,b,expected):
-    from calculator import add_two_numbers
-    answer = add_two_numbers(a,b)
-    assert answer == pytest.approx(expected)
+def test_exact(s, expected):
+    from tachycardia import is_tachycardic
+    answer = is_tachycardic(s)
+    assert answer == expected
