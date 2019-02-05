@@ -20,5 +20,4 @@ def is_tachycardic(s):
     # Only returns true if number of matches is no less than
     # 2 of total length of target AND the number of extra letters
     # in the input string is less than 3
-    return number_of_matched_letters >= (len(target) - 2) and \
-           abs(len(s) - number_of_matched_letters) < 3
+    return number_of_matched_letters >= (len(target) - 2) and abs(len(s) - number_of_matched_letters) < 3
