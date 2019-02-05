@@ -1,2 +1,4 @@
 def is_tachycardic(s):
-    return True
+    s = s.lower()
+    target = "tachycardic"
+    return target in s
